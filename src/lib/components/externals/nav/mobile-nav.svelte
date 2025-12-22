@@ -36,7 +36,7 @@
 	const getCurrentRouteLabel = $derived(routes.find((item) => item.href === activeRoute)?.label);
 </script>
 
-<nav class="border-b border-muted-foreground/50 sm:hidden">
+<nav class="sm:hidden">
 	<section class="relative p-2">
 		<div class="flex items-center gap-2">
 			<Sheet.Root bind:open={navOpen}>
