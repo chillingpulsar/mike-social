@@ -8,8 +8,8 @@
 	<section class="flex items-center justify-between">
 		<div class="size-5 bg-primary rounded-full"></div>
 		<div class="">
-			<Button size="sm" class="w-fit">Sign up Free</Button>
-			<Button variant="outline" size="sm" class="w-fit">Sign in</Button>
+			<Button href="/register" size="sm" class="w-fit">Sign up Free</Button>
+			<Button href="/login" variant="outline" size="sm" class="w-fit">Sign in</Button>
 		</div>
 	</section>
 </nav>

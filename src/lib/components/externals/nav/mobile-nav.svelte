@@ -10,6 +10,8 @@
 	import { buttonVariants } from '$lib/components/internals/button/button.svelte';
 	import { goto } from '$app/navigation';
 	import { ScrollArea } from '$lib/components/internals/scroll-area/index';
+	import UserNav from './user-nav.svelte';
+	import { hasUser } from '$lib';
 
 	let activeRoute = $derived(page.url.pathname);
 
@@ -47,29 +49,33 @@
 				<Sheet.Content side="left" class="border-r-muted-foreground/50">
 					<ScrollArea class="p-4 h-[calc(100vh-4rem)]">
 						<div class="flex flex-col gap-2">
-							<div class="size-5 bg-primary rounded-full"></div>
-							<h4 class="text-xl font-medium">Join the <br />conversation</h4>
+							{#if hasUser}
+								<UserNav />
+							{:else}
+								<div class="size-5 bg-primary rounded-full"></div>
+								<h4 class="text-xl font-medium">Join the <br />conversation</h4>
 
-							<Button size="sm" class="w-fit mt-4">Sign up Free</Button>
-							<Button variant="outline" size="sm" class="w-fit">Sign in</Button>
-							<div class="border-y border-muted-foreground/50 mt-4 flex flex-col gap-2 py-4">
-								{#each routes as route}
-									<button
-										onclick={async () => {
-											navOpen = false;
-											await goto(route.href);
-										}}
-										class={[
-											'text-center grid grid-cols-[auto_1fr] gap-1.5 items-center p-2 text-sm w-fit',
-											activeRoute === route.href &&
-												'underline underline-offset-13 decoration-primary decoration-4'
-										]}
-									>
-										<route.icon class="size-4.5" />
-										{route.label}
-									</button>
-								{/each}
-							</div>
+								<Button size="sm" class="w-fit mt-4">Sign up Free</Button>
+								<Button variant="outline" size="sm" class="w-fit">Sign in</Button>
+								<div class="border-y border-muted-foreground/50 mt-4 flex flex-col gap-2 py-4">
+									{#each routes as route}
+										<button
+											onclick={async () => {
+												navOpen = false;
+												await goto(route.href);
+											}}
+											class={[
+												'text-center grid grid-cols-[auto_1fr] gap-1.5 items-center p-2 text-sm w-fit',
+												activeRoute === route.href &&
+													'underline underline-offset-13 decoration-primary decoration-4'
+											]}
+										>
+											<route.icon class="size-4.5" />
+											{route.label}
+										</button>
+									{/each}
+								</div>
+							{/if}
 
 							<div class="mt-4 flex flex-col gap-1.5">
 								<a href="/terms-of-service" class="text-xs text-blue-400">Terms of Service</a>
