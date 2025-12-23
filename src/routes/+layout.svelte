@@ -4,7 +4,7 @@
 	import MobileNav from '$lib/components/externals/nav/mobile-nav.svelte';
 	import TabletNav from '$lib/components/externals/nav/tablet-nav.svelte';
 	import LeftSidebar from '$lib/components/externals/nav/left-sidebar.svelte';
-	import RightSidebar from '$lib/components/externals/nav/right-sidebar.svelte';
+	import RightSidebar from '$lib/components/externals/nav/right-sidebar/right-sidebar.svelte';
 	import { page } from '$app/state';
 	import { hasUser } from '$lib';
 
