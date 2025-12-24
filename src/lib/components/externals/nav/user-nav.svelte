@@ -8,9 +8,11 @@
 	import IconSave from '@lucide/svelte/icons/save';
 	import IconUser from '@lucide/svelte/icons/user';
 	import IconSettings from '@lucide/svelte/icons/settings';
+	import IconLogOut from '@lucide/svelte/icons/log-out';
 	import { page } from '$app/state';
 	import { cn } from '$lib/utils';
 	import type { ClassNameValue } from 'tailwind-merge';
+	import * as DropdownMenu from '$lib/components/internals/dropdown-menu/index';
 
 	interface Props {
 		class?: ClassNameValue;
@@ -89,9 +91,35 @@
 	<div
 		class="py-4 border-y border-muted-foreground/50 sm:border-y-0 flex flex-col sm:gap-4.5 lg:gap-2.5"
 	>
-		<div
-			class="size-10 bg-secondary rounded-full mb-2 hidden sm:block sm:ml-0.5 lg:ml-2.5 lg:-mb-1.5"
-		></div>
+		<DropdownMenu.Root>
+			<DropdownMenu.Trigger
+				class="hidden sm:flex gap-1.5 group cursor-pointer lg:px-3 items-center justify-center lg:items-center lg:justify-start"
+			>
+				<div class="size-10 bg-secondary rounded-full"></div>
+
+				<div class="flex-col hidden lg:flex">
+					<h4 class="text-sm font-medium text-left">John doe</h4>
+					<p class="text-xs text-muted-foreground text-left">@yoursample.com</p>
+				</div>
+			</DropdownMenu.Trigger>
+			<DropdownMenu.Content
+				side="right"
+				align="start"
+				class="bg-background border-muted-foreground/50"
+			>
+				<DropdownMenu.Group>
+					<DropdownMenu.Item class="text-white group hover:bg-primary! hover:text-white!">
+						<IconUser class="size-4 text-white group-hover:text-white" />
+						Go to profile
+					</DropdownMenu.Item>
+					<DropdownMenu.Item class="text-white group hover:bg-primary! hover:text-white!">
+						<IconLogOut class="size-4 text-white group-hover:text-white" />
+						Sign out
+					</DropdownMenu.Item>
+				</DropdownMenu.Group>
+			</DropdownMenu.Content>
+		</DropdownMenu.Root>
+
 		{#each routes as route}
 			<button
 				onclick={async () => {}}
