@@ -28,7 +28,7 @@
 		"formsnap": "^2.0.1",
 		"prettier": "^3.7.4",
 		"prettier-plugin-svelte": "^3.4.1",
-		"svelte": "^5.46.0",
+		"svelte": "^5.46.1",
 		"svelte-check": "^4.3.5",
 		"sveltekit-superforms": "^2.29.1",
 		"tailwind-merge": "^3.4.0",
