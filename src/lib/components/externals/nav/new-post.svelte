@@ -26,20 +26,22 @@
 
 			<Button size="sm">Post</Button>
 		</div>
+		<ScrollArea class="max-h-[35dvh] px-1">
+			<div class="grid grid-cols-[auto_1fr] gap-2 pl-3 pr-1 max-h-[35dvh]">
+				<div class="size-10 bg-secondary rounded-full"></div>
 
-		<div class="grid grid-cols-[auto_1fr] gap-2 pl-4 pr-2">
-			<div class="size-10 bg-secondary rounded-full"></div>
-
-			<Textarea
-				placeholder="What's on your mind?"
-				class="rounded-none border-none ring-0! focus-visible:ring-0! focus-visible:ring-offset-0!"
-			/>
-		</div>
+				<Textarea
+					placeholder="What's on your mind?"
+					class="rounded-none border-none ring-0! focus-visible:ring-0! focus-visible:ring-offset-0!"
+					rows={1}
+				/>
+			</div>
+		</ScrollArea>
 
 		<!--Uploaded Media-->
-		<ScrollArea class="h-[220px] px-2">
+		<ScrollArea class="max-h-[25dvh] px-2">
 			<div class="flex flex-wrap items-center gap-2 p-2">
-				{#each Array(3)}
+				{#each Array(20)}
 					<div
 						class="aspect-square flex-1 min-w-20 max-w-40 rounded-lg bg-secondary flex flex-col items-center justify-center"
 					>
