@@ -41,7 +41,7 @@
 		<!--Uploaded Media-->
 		<ScrollArea class="max-h-[25dvh] px-2">
 			<div class="flex flex-wrap items-center gap-2 p-2">
-				{#each Array(20)}
+				{#each Array(0)}
 					<div
 						class="aspect-square flex-1 min-w-20 max-w-40 rounded-lg bg-secondary flex flex-col items-center justify-center"
 					>
