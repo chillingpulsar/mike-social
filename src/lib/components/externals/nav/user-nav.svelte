@@ -13,6 +13,7 @@
 	import { cn } from '$lib/utils';
 	import type { ClassNameValue } from 'tailwind-merge';
 	import * as DropdownMenu from '$lib/components/internals/dropdown-menu/index';
+	import NewPost from './new-post.svelte';
 
 	interface Props {
 		class?: ClassNameValue;
@@ -133,5 +134,9 @@
 				<span class="sm:hidden lg:block">{route.label}</span>
 			</button>
 		{/each}
+
+		<div class="ml-4 relative hidden lg:block">
+			<NewPost />
+		</div>
 	</div>
 </section>

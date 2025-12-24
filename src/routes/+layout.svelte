@@ -18,7 +18,7 @@
 {:else}
 	<MobileNav />
 
-	<main class="grid sm:grid-cols-[1fr_576px_1fr] max-w-6xl mx-auto">
+	<main class="grid sm:grid-cols-[auto_576px_1fr] lg:grid-cols-[1fr_576px_1fr] max-w-6xl mx-auto">
 		<LeftSidebar class={[hasUser ? 'sm:h-screen' : 'sm:h-[calc(100vh-4rem)]']} />
 		<section class="">
 			{@render children()}

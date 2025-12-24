@@ -4,6 +4,8 @@
 	import IconSearch from '@lucide/svelte/icons/search';
 	import Input from '$lib/components/internals/input/input.svelte';
 	import { page } from '$app/state';
+	import NewPost from '../new-post.svelte';
+	import { hasUser } from '$lib';
 
 	interface Props {
 		class?: ClassNameValue;
@@ -129,3 +131,9 @@
 		</div>
 	</div>
 </aside>
+
+{#if hasUser}
+	<div class="fixed bottom-4 right-4 lg:hidden pointer-events-auto z-50">
+		<NewPost />
+	</div>
+{/if}
